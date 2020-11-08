@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>World Map - jVectorMap</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="jquery-jvectormap-2.0.5.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="jquery-jvectormap-2.0.5.min.js"></script>
+
+    <script src="jquery-jvectormap-world-mill-en.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div id="world-map" style="width: 1780px; height: 1000px"></div>
+    </div>
+    
+    <script>
+      $('#world-map').vectorMap({
+          map: 'world_mill'
+        });
+    </script>
+</body>
+</html>
