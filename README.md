@@ -22,4 +22,4 @@ Mexico's first recipe is a clickable recipe example (only one recipe was created
 ## Recipe Page
 A clickable sample Recipe Page was created for "Carnitas-Pressure Cooked" for demonstration.
 This page is what actually gives you the recipe information.
-It contains both a botton at the bottom to return to the previous page but you are also able to return using the top left logo.
+It contains both a button at the bottom to return to the previous page but you are also able to return using the top left logo.
