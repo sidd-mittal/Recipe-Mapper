@@ -11,18 +11,47 @@
     <script src="jquery-jvectormap-2.0.5.min.js"></script>
 
     <script src="jquery-jvectormap-world-mill-en.js"></script>
+    <script src="Nationalities.js"></script>
 
 </head>
 <body>
-
     <div class="container">
         <div id="world-map" style="width: 1780px; height: 1000px"></div>
     </div>
     
     <script>
-      $('#world-map').vectorMap({
-          map: 'world_mill'
+        function findNationalities(code1) { 
+            var value1; 
+            getNationalities.forEach(function(item, index){
+                if(item.alpha_2_code == code1) { 
+                    value1 = item.nationality; 
+                }
+            });
+            return value1; 
+        }
+
+        $('#world-map').vectorMap({
+            map: 'world_mill', 
+            series: {}, 
+                onRegionTipShow: function(e, el, code){
+                    
+                    $.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=Your_Key&cuisine="+findNationalities(code)).then(
+                        function(data) { 
+                            var title = data.results[0].title?data.results[0].title:'Sorry, no available recipes'; 
+                            var image1 = '<img src="'+ (data.results[0].image?data.results[0].image:'') + '">'; 
+                            var recipeID = data.results[0].id?data.results[0].id:"";
+                            $.get("https://api.spoonacular.com/recipes/"+recipeID+"/information?apiKey=Your_Key",
+                            function(data2) { 
+                                var recipeURL = data2.spoonacularSourceUrl; 
+                                var recipelink = '<a href="'+ recipeURL + '" style="color:white;">' + recipeURL + '</a>';
+                                el.html(el.html() + title + "<br/>" + image1 + "<br/>" + recipelink);
+                            }
+                            ); 
+                        }
+                    )                
+            }
         });
+
     </script>
 </body>
 </html>
