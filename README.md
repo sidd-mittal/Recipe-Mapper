@@ -1,5 +1,5 @@
-# Recipe-Mapper
-🍽 🍕 A web-application designed to help people from around the world discover new recipes and learn new cultures, at the comfort of their home! 
+# 🍽 Recipe-Mapper
+Hackathon project @ HackAttack. A web-application designed to help people from around the world discover new recipes and learn new cultures, at the comfort of their home! 
 
 # Figma Application Prototype
 A Figma prototype was created to demonstrate the purpose and functionality of our application
